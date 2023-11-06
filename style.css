@@ -77,7 +77,7 @@ p {
 }
 
 .teaser-desc {
-   max-width: 33ch;
+   max-width: 50ch;
    margin-top: 5rem;
    margin-bottom: 0px;
 }
@@ -118,6 +118,28 @@ p {
 
 .typed {
    display: inline;
+}
+
+.language-buttons {
+   color: white;
+   padding: 20px;
+   text-align: center;
+   opacity: 70%;
+   display: flex;
+   justify-content: center;
+}
+
+.language-button {
+   background-color: transparent;
+   color: white;
+   font-size: 20px;
+   cursor: pointer;
+   padding: 5px;
+   margin: 5px;
+}
+
+.language-button:hover {
+   text-decoration: underline;
 }
 
 @media screen and (max-width: 991px) {
