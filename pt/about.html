@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HENRIQUE OLIVEIRA</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/x-icon" href="../favicon.png">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/press-start-2p" type="text/css">
+</head>
+
+<body class="body">
+    <div class="main-wrapper">
+        <div class="crt"></div>
+        <div class="teaser-component">
+            <h1 style="opacity: 1;" class="teaser-title">Sobre Mim</h1>
+            <div style="opacity: 0.75;" class="teaser-desc">
+                <div id="typed" class="typed"></div>
+            </div>
+            <a style="opacity: 1;" href="https://github.com/m0streng0" target="_blank" class="teaser-gh">github | m0streng0</a>
+            <header id="header">
+                <nav class="nav">
+                    <button class="toggle-menu">
+                        <span></span>
+                    </button>
+                </nav>
+            </header>
+            <div id="menu" class="">
+                <nav class="main-nav">
+                    <ul>
+                        <li>
+                            <a href="index.html">
+                                Homepage
+                            </a>
+                        </li>
+                        <li>
+                            <a href="projects.html">
+                                Projetos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contacts.html">
+                                Contactos
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <footer class="menu-footer">
+                    <nav class="footer-nav">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-twitter fa-fw"></i>
+                                    LINK 1
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-envelope fa-fw"></i>
+                                    LINK 2
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#typed',{
+            strings: ['esta pagina esta a chegar!'],
+            typeSpeed: 50,
+            showCursor: true,
+            cursorChar: ' _',
+            startDelay: 1200
+        });
+    </script>
+    <script>
+        $('.toggle-menu').click(function(){
+            $(this).toggleClass('active');
+            $('#menu').toggleClass('open');
+        });
+    </script>
+</body>
+
+</html>

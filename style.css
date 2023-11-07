@@ -31,8 +31,8 @@ a {
 
 p {
    font-family: 'PressStart2PRegular';
-   font-weight: normal; /* or 'bold' for a bold font */
-   font-style: normal; /* or 'italic' for an italic font */
+   font-weight: normal;
+   font-style: normal;
 }
 
 .main-wrapper {
@@ -107,13 +107,108 @@ p {
 }
 
 .crt {
+   pointer-events: none;
    position: fixed;
-   left: 0%;
-   top: 0%;
-   right: 0%;
-   bottom: 0%;
+   left: 0;
+   top: 0;
+   right: 0;
+   bottom: 0;
    z-index: 999;
    color: #24f29c;
+}
+
+.crt::after {
+   content: " ";
+   display: block;
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   background: rgba(18, 16, 16, .3);
+   opacity: 0;
+   z-index: 2;
+   pointer-events: none;
+   animation: flicker 0.15s infinite;
+}
+.crt::before {
+   content: " ";
+   display: block;
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+   linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+   z-index: 2;
+   background-size: 100% 4px, 6px 100%;
+}
+
+@keyframes flicker {
+   0% {
+      opacity: 0.27861;
+   }
+   5% {
+      opacity: 0.34769;
+   }
+   10% {
+      opacity: 0.23604;
+   }
+   15% {
+      opacity: 0.90626;
+   }
+   20% {
+      opacity: 0.18128;
+   }
+   25% {
+      opacity: 0.83891;
+   }
+   30% {
+      opacity: 0.65583;
+   }
+   35% {
+      opacity: 0.67807;
+   }
+   40% {
+      opacity: 0.26559;
+   }
+   45% {
+      opacity: 0.84693;
+   }
+   50% {
+      opacity: 0.96019;
+   }
+   55% {
+      opacity: 0.08594;
+   }
+   60% {
+      opacity: 0.20313;
+   }
+   65% {
+      opacity: 0.71988;
+   }
+   70% {
+      opacity: 0.53455;
+   }
+   75% {
+      opacity: 0.37288;
+   }
+   80% {
+      opacity: 0.71428;
+   }
+   85% {
+      opacity: 0.70419;
+   }
+   90% {
+      opacity: 0.7003;
+   }
+   95% {
+      opacity: 0.36108;
+   }
+   100% {
+      opacity: 0.24387;
+   }
 }
 
 .typed {
@@ -139,22 +234,189 @@ p {
 }
 
 .language-button:hover {
-   text-decoration: underline;
+   opacity: 0.5;
+}
+
+/* Menu styles */
+#menu {
+   background: #111;
+   height: 100%;
+   left: 0;
+   opacity: 0;
+   overflow: hidden;
+   position: fixed;
+   text-align: center;
+   top: 0;
+   transition: all 0.7s ease-in-out;
+   visibility: hidden;
+   width: 100%;
+   z-index: 1100;
+}
+
+#menu.open {
+   opacity: 1;
+   visibility: visible;
+}
+
+#menu.open li:nth-child(n) {
+   animation-duration: 1.0s;
+   animation-fill-mode: both;
+   animation-name: fadeInUp;
+}
+
+#menu ul a:hover {
+   opacity: 0.5;
+}
+
+#menu ul a {
+   -webkit-transform: translateZ(0);
+   transform: translateZ(0);
+   transition: opacity 0.3s ease-in-out;
+}
+
+#menu .main-nav {
+   position: relative;
+   top: 50%;
+   transform: translateY(-50%);
+}
+
+#menu .main-nav ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+#menu .main-nav a {
+   color: #ffffff;
+   display: block;
+   font-size: 2.5rem;
+   font-weight: bold;
+   padding: 1rem;
+   text-decoration: none;
+}
+
+#menu .main-nav a:first-child {
+   padding-top: 0;
+}
+
+#menu .menu-footer {
+   padding: 2rem;
+   bottom: 0;
+   left: 0;
+   position: absolute;
+   right: 0;
+}
+
+#menu .menu-footer ul {
+   display: inline-block;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+#menu .menu-footer li {
+   display: inline;
+   margin: 0 1rem;
+}
+
+#menu .menu-footer a {
+   color: #ffffff;
+   text-decoration: none;
+   text-transform: uppercase;
+}
+
+/* Hamburger menu toggler styles */
+.toggle-menu {
+   background-color: #157A53;
+   border-radius: 30%;
+   border: none;
+   cursor: pointer;
+   display: block;
+   position: fixed;
+   top: 0;
+   right: 0;
+   height: 50px;
+   width: 50px;
+   z-index: 1110;
+   margin-top: 40px;
+   margin-right: 80px;
+}
+
+.toggle-menu:hover {
+   background-color: #1a9d6b;
+   transform: scale(1.1);
+}
+
+.toggle-menu span {
+   background-color: #fff;
+   content: "";
+   display: block;
+   height: 2px;
+   left: calc(50% - 13px);
+   position: absolute;
+   top: calc(50% - 1px);
+   transform-origin: 50% 50%;
+   transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+   width: 26px;
+}
+
+.toggle-menu span:before,
+.toggle-menu span:after {
+   background-color: #fff;
+   content: "";
+   display: block;
+   height: 2px;
+   position: absolute;
+   transform-origin: 50% 50%;
+   transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+   width: 26px;
+}
+
+.toggle-menu span:before {
+   top: 7px;
+}
+
+.toggle-menu span:after {
+   top: -7px;
+}
+
+/* Hamburger menu toggler styles */
+.toggle-menu.active span {
+   background-color: transparent;
+}
+
+.toggle-menu.active span:before,
+.toggle-menu.active span:after {
+   display: block;
+   width: 26px;
+   height: 2px;
+   background-color: #fff;
+   position: absolute;
+   transition: transform 0.2s, background-color 0.2s ease-in-out;
+}
+
+.toggle-menu.active span:before {
+   top: 0;
+   transform: rotate(45deg)
+}
+
+.toggle-menu.active span:after {
+   top: 0;
+   transform: rotate(-45deg)
 }
 
 @media screen and (max-width: 991px) {
-   .teaser-title__jp {
+   .teaser-title__jp, .teaser-title {
       font-size: 1.5rem;
-   }
+    }
 
    .teaser-title {
       margin-top: 1rem;
-      font-size: 1.5rem;
-   }
+    }
 
    .teaser-gh {
       font-size: 0.5rem;
-   }
+    }
 
    .invaders {
       width: 7rem;
