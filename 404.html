@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>404 - Not Found</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/press-start-2p" type="text/css">
+</head>
+
+
+<body class="body">
+    <div class="main-wrapper">
+        <div class="crt"></div>
+        <div class="error">
+            <div id="typed" class="typed"></div>
+            <a href="index.html" id="returnHome" class="return-link" style="display:none">Return Home</a>
+        </div>
+    </div>
+
+    <style type="text/css">
+        .main-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .return-link {
+            margin-top: 30px;
+            display: block;
+            text-align: center;
+            
+            padding: 0.75em 1.5em;
+            border-radius: 4px;
+            transition: background-color 200ms cubic-bezier(.6, -.28, .735, .045);
+            text-decoration: none;
+        }
+
+        .return-link:hover {
+           background-color: #24f29c;
+           color: #111;
+        }
+            </style>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#typed',{
+            strings: ['404, page not found.'],
+            typeSpeed: 50,
+            showCursor: true,
+            cursorChar: ' _',
+            startDelay: 1200,
+            onComplete: function() {
+                var returnHomeButton = document.getElementById('returnHome');
+                returnHomeButton.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
