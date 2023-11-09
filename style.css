@@ -117,7 +117,11 @@ p {
    color: #24f29c;
 }
 
-.crt::after {
+.crt.index-animation::after,
+.fixed-section.index-animation::after,
+.toggle-menu.index-animation::after,
+.main-nav.index-animation::after,
+.menu-footer.index-animation::after {
    content: " ";
    display: block;
    position: absolute;
@@ -131,6 +135,7 @@ p {
    pointer-events: none;
    animation: flicker 0.15s infinite;
 }
+
 .crt::before {
    content: " ";
    display: block;
