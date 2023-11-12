@@ -524,6 +524,42 @@ p {
     text-align: center;
 }
 
+.contacts-section {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.contacts-section p {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+}
+
+.contacts-section ul {
+   list-style: none;
+   padding: 0;
+}
+
+.contacts-section li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.contacts-section a {
+   opacity: 0.75;
+   padding: 0.75em 1.5em;
+   border-radius: 4px;
+   transition: background-color 200ms cubic-bezier(.6, -.28, .735, .045);
+   text-decoration: none;
+   cursor: pointer;
+}
+
+.contacts-section a:hover {
+   opacity: 1;
+   background-color: #24f29c;
+   color: #111;
+}
+
 @media only screen and (orientation:portrait) {
     .lightbox img {
         max-width: 90vw; /* Adjusted maximum width for vertical devices */
@@ -535,7 +571,8 @@ p {
       font-size: 1.5rem;
     }
 
-   .teaser-title {
+   .teaser-title,
+   .contacts-section p {
       margin-top: 1rem;
     }
 
@@ -549,7 +586,8 @@ p {
       margin-bottom: 2rem;
    }
 
-   .body {
+   .body,
+   .contacts-section li {
       font-size: 0.75rem;
    }
 
