@@ -574,6 +574,14 @@ p {
 }
 
 .content-section h2 {
+   font-size: 1.5rem;
+}
+
+#my-hobbies p {
+   font-size: 0.8rem;
+}
+
+.content-section h2 {
    color: #24f29c;
 }
 
@@ -593,12 +601,12 @@ p {
 
 .intro-text h2 {
    color: #24f29c;
-   font-size: 2rem;
+   font-size: 1.7rem;
 }
 
 .intro-text h3 {
    color: #24f29c;
-   font-size: 1.8rem;
+   font-size: 1.5rem;
    opacity: 0.8;
 }
 
@@ -629,7 +637,7 @@ p {
 .education-list li,
 .language-list li,
 .hobbies-list li {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
 }
 
 .skill-categories {
@@ -637,11 +645,11 @@ p {
 }
 
 .skill-category {
-    margin-right: 2rem;
+    margin-right: 1.2rem;
 }
 
 .skill-category h3 {
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .skill-category ul {
@@ -651,7 +659,7 @@ p {
 }
 
 .skill-category ul li {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
 }
 
 @media only screen and (orientation:portrait) {
@@ -702,23 +710,28 @@ p {
       object-fit: cover
    }
 
-   .intro-text h3,
-   .text1-about,
-   .content-section h2,
-   .skill-category h3 {
+   .intro-text h3 {
       font-size: 1rem;
    }
 
-   .intro-text h2 {
-      font-size: 1.5rem;
+   .text1-about,
+   .content-section h2,
+   .skill-category h3 {
+      font-size: 0.8rem;
    }
 
+   .intro-text h2 {
+      font-size: 1.2rem;
+   }
+
+   .text2-about,
    .experience-list li,
    .education-list li,
    .language-list li,
    .hobbies-list li,
-   .skill-category ul li {
-       font-size: 0.8rem;
+   .skill-category ul li,
+   #my-hobbies p {
+       font-size: 0.5rem;
    }
 
    .about {
